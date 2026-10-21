@@ -1,0 +1,116 @@
+{
+  "valor": "Centro de Autodiagnóstico de Soporte Técnico",
+  "hijos": [
+    {
+      "valor": "Internet por Cable Ethernet",
+      "hijos": [
+        {
+          "valor": "Conexión sin acceso a Internet",
+          "hijos": [
+            {
+              "valor": "¿La luz del puerto donde conectas el cable de red está apagada?",
+              "hijos": [
+                {
+                  "valor": "Sí: posible fallo del enlace físico Ethernet. Verifica que el cable RJ45 esté conectado correctamente en ambos extremos, prueba otro cable funcional y utiliza otro puerto LAN habilitado. Comprueba que el indicador luminoso se encienda. Perfil: fallo de conexión física. Escalamiento: no inicial."
+                },
+                {
+                  "valor": "No: la luz parpadea o permanece encendida, pero no hay acceso a Internet. Reinicia el adaptador de red y comprueba la configuración IP y DNS. Si no se obtiene una dirección IP válida, puede existir un problema con DHCP o la puerta de enlace. Perfil: posible fallo de configuración IP. Escalamiento: sí, si persiste."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valor": "Conexión lenta o inestable",
+          "hijos": [
+            {
+              "valor": "¿El cable está bien conectado y la conexión funciona a la velocidad esperada?",
+              "hijos": [
+                {
+                  "valor": "No: revisa el cable RJ45, los conectores y el puerto LAN. Sustituye el cable si presenta daños y verifica la velocidad de enlace negociada por la tarjeta de red. Perfil: posible fallo físico o limitación del enlace. Escalamiento: no inicial."
+                },
+                {
+                  "valor": "Sí: realiza una prueba de velocidad conectado directamente al módem, cierra aplicaciones que consuman ancho de banda y compara los resultados con la velocidad contratada. Si la lentitud continúa, registra las mediciones y solicita una revisión de la red. Perfil: posible congestión o incidencia del proveedor. Escalamiento: sí, si persiste."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Internet por Wi-Fi",
+      "hijos": [
+        {
+          "valor": "Wi-Fi lento o con poca cobertura",
+          "hijos": [
+            {
+              "valor": "¿Estás conectado a la red Wi-Fi de 2,4 GHz o estás lejos del router?",
+              "hijos": [
+                {
+                  "valor": "Sí: la banda de 2.4 GHz suele ofrecer mayor alcance, pero puede presentar más interferencias. Si necesitas mayor velocidad y estás cerca del router, prueba la banda de 5 GHz. Ubica el router en un espacio abierto y reduce los obstáculos físicos. Perfil: cobertura insuficiente o banda no óptima. Escalamiento: no inicial."
+                },
+                {
+                  "valor": "No: estás conectado a 5 GHz cerca del router. Reinicia el router desconectándolo de la alimentación durante aproximadamente 30 segundos. Espera a que se restablezca la conexión y repite la prueba de velocidad. Si el problema continúa, revisa interferencias y congestión. Perfil: posible incidencia temporal del router o de la red. Escalamiento: no inicial."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valor": "Desconexiones intermitentes",
+          "hijos": [
+            {
+              "valor": "¿La conexión Wi-Fi se pierde al mismo tiempo en varios dispositivos?",
+              "hijos": [
+                {
+                  "valor": "Sí: varios dispositivos pierden conexión al mismo tiempo. Reinicia el router y comprueba si la incidencia persiste. Revisa la ocupación de los canales inalámbricos y configura un canal menos congestionado si tienes autorización. Si también falla la conexión cableada, informa de la incidencia a soporte técnico. Perfil: posible interferencia o fallo del router. Escalamiento: si persiste."
+                },
+                {
+                  "valor": "No: el problema ocurre en un único dispositivo. Abre los ajustes Wi-Fi, selecciona la red y utiliza la opción «Olvidar red». Después, vuelve a conectarte introduciendo la contraseña correcta. Si continúa el problema, revisa el controlador y la configuración del adaptador inalámbrico. Perfil: posible fallo de configuración del dispositivo. Escalamiento: no inicial."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "valor": "Televisión Digital",
+      "hijos": [
+        {
+          "valor": "Pantalla negra o mensaje «Sin señal»",
+          "hijos": [
+            {
+              "valor": "¿El televisor está mostrando la entrada HDMI a la que conectaste el decodificador?",
+              "hijos": [
+                {
+                  "valor": "No: utiliza el control remoto del televisor y pulsa «Input» o «Source». Selecciona el puerto HDMI al que está conectado el decodificador, por ejemplo HDMI 1 o HDMI 2. Verifica que el decodificador esté encendido y que los conectores estén firmes. Perfil: entrada de vídeo incorrecta. Escalamiento: no inicial."
+                },
+                {
+                  "valor": "Sí: la entrada HDMI es correcta, pero la pantalla continúa en negro. Comprueba las conexiones de alimentación y vídeo. Desconecta el decodificador durante aproximadamente 10 segundos, vuelve a conectarlo y espera a que finalice el inicio. Si no se recupera la imagen, registra los indicadores y solicita asistencia técnica. Perfil: posible fallo del decodificador o de la transmisión de vídeo. Escalamiento: sí, si persiste."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "valor": "Mensaje de error de tarjeta, canal o autorización",
+          "hijos": [
+            {
+              "valor": "¿En la pantalla aparece el mensaje «Tarjeta no autorizada» o «Canal no contratado»?",
+              "hijos": [
+                {
+                  "valor": "Sí: comprueba que el canal esté incluido en la suscripción y que la tarjeta inteligente esté insertada correctamente, si el equipo utiliza una. Si existe una función autorizada de actualización de señal, solicita el refresco de autorización y espera el tiempo indicado por el proveedor. Perfil: posible incidencia de autorización o suscripción. Escalamiento: si persiste."
+                },
+                {
+                  "valor": "No: registra el código exacto del error, el canal afectado y el estado de los indicadores del decodificador. Comprueba las conexiones básicas y remite la información al soporte técnico para revisar la señal y la configuración del equipo. Perfil: error de televisión pendiente de diagnóstico. Escalamiento: sí."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

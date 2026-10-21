@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Asistente de soporte técnico</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- Contenedor principal que centra y limita el ancho de la aplicación. -->
+    <main class="app-shell">
+      <!-- Barra superior con la identidad del asistente y el reinicio. -->
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Asistente de soporte técnico, inicio">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span>
+            <strong>Soporte técnico</strong>
+            <small>Asistente de autodiagnóstico</small>
+          </span>
+        </a>
+        <button class="text-button" id="restart-button" type="button">
+          Reiniciar chat
+        </button>
+      </header>
+
+      <!-- Panel de conversación, opciones y controles de navegación. -->
+      <section class="chat-card" aria-label="Chat de soporte técnico">
+        <div class="chat-heading">
+          <div>
+            <p class="eyebrow">ASISTENTE VIRTUAL</p>
+            <h1>¿En qué podemos ayudarte?</h1>
+          </div>
+          <span class="status"><span class="status-dot"></span>Guía interactiva</span>
+        </div>
+
+        <!-- Los mensajes se anuncian a lectores de pantalla al agregarse. -->
+        <div
+          class="conversation"
+          id="conversation"
+          aria-live="polite"
+          aria-relevant="additions text"
+        ></div>
+
+        <div class="chat-footer">
+          <button class="back-button" id="back-button" type="button" disabled>
+            <span aria-hidden="true">←</span> Volver
+          </button>
+          <p>Elige una opción para continuar con el diagnóstico.</p>
+          <span class="footer-icon" aria-hidden="true">⌁</span>
+        </div>
+      </section>
+      <!-- Aclara el alcance de las recomendaciones del árbol. -->
+      <p class="disclaimer">Las recomendaciones son orientativas y se basan en el árbol de diagnóstico.</p>
+    </main>
+  </body>
+</html>

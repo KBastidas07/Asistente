@@ -1,0 +1,409 @@
+/* Fuentes y colores compartidos por los componentes de la interfaz. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", sans-serif;
+  color: #202a3a;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #202a3a;
+  --muted: #7b8494;
+  --line: #e8ebf1;
+  --blue: #4268e8;
+  --blue-dark: #3155ce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo y estructura general de la página. */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% -20%, #e9efff 0, transparent 52%),
+    #f5f7fb;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(100% - 40px, 900px);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marca y acción para reiniciar el diagnóstico. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--blue);
+  box-shadow: 0 7px 16px #4268e833;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.text-button,
+.back-button {
+  border: 0;
+  background: transparent;
+  color: #677184;
+  cursor: pointer;
+}
+
+.text-button {
+  padding: 9px 12px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.text-button:hover,
+.back-button:not(:disabled):hover {
+  background: #e9edf5;
+  color: var(--ink);
+}
+
+.chat-card {
+  min-height: min(690px, calc(100vh - 145px));
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e9ecf2;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 55px #2738580a;
+}
+
+/* Título, estado y área desplazable de la conversación. */
+.chat-heading {
+  min-height: 99px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(18px, 2.5vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  color: #697487;
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #51b887;
+}
+
+.conversation {
+  min-height: 350px;
+  flex: 1;
+  padding: 30px clamp(18px, 5vw, 54px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Estilos de los mensajes del asistente y del usuario. */
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+  animation: appear 180ms ease-out;
+}
+
+.message-row.user {
+  justify-content: flex-end;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #edf1ff;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.message-content {
+  max-width: min(78%, 590px);
+}
+
+.message-label {
+  margin: 1px 0 6px;
+  color: #8a93a2;
+  font-size: 11px;
+}
+
+.message-bubble {
+  padding: 12px 15px;
+  border: 1px solid #edf0f5;
+  border-radius: 4px 15px 15px;
+  background: #f7f8fb;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.user .message-bubble {
+  border: 0;
+  border-radius: 15px 4px 15px 15px;
+  background: var(--blue);
+  color: white;
+}
+
+.solution-details {
+  margin-top: 10px;
+  color: #626e80;
+  font-size: 12px;
+}
+
+.solution-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.solution-details p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Botones que permiten elegir una rama del árbol. */
+.options {
+  margin: -7px 0 23px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  animation: appear 180ms ease-out;
+}
+
+.option-button {
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #dfe5f2;
+  border-radius: 10px;
+  background: #fff;
+  color: #40536f;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+}
+
+.option-button:hover:not(:disabled) {
+  border-color: #aebeff;
+  background: #f5f7ff;
+  color: var(--blue-dark);
+}
+
+.option-button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Indicador de espera y controles inferiores del chat. */
+.loading {
+  color: #7b8494;
+  font-size: 13px;
+}
+
+.chat-footer {
+  min-height: 58px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  background: #fdfdfe;
+}
+
+.chat-footer p {
+  margin: 0;
+  color: #9098a6;
+  font-size: 11px;
+  text-align: center;
+}
+
+.back-button {
+  padding: 7px 9px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.back-button span {
+  margin-right: 4px;
+}
+
+.back-button:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.footer-icon {
+  width: 36px;
+  text-align: right;
+  color: #c2c8d3;
+  font-size: 20px;
+}
+
+.disclaimer {
+  margin: 12px 0 18px;
+  color: #9aa2af;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Indicadores visibles para navegación mediante teclado. */
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #9eafff;
+  outline-offset: 3px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes para pantallas estrechas. */
+@media (max-width: 600px) {
+  .app-shell {
+    width: min(100% - 20px, 900px);
+  }
+
+  .topbar {
+    min-height: 72px;
+  }
+
+  .chat-card {
+    min-height: calc(100vh - 120px);
+    border-radius: 16px;
+  }
+
+  .chat-heading {
+    min-height: 86px;
+    padding: 16px;
+  }
+
+  .status {
+    max-width: 85px;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .conversation {
+    padding: 23px 14px;
+  }
+
+  .message-content {
+    max-width: 86%;
+  }
+
+  .options {
+    margin-left: 40px;
+  }
+
+  .chat-footer {
+    padding: 0 12px;
+  }
+
+  .chat-footer p {
+    max-width: 190px;
+    line-height: 1.4;
+  }
+}
+
+/* Reduce movimiento para usuarios que lo desactivan en el sistema. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
